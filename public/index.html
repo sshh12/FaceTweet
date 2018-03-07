@@ -17,7 +17,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Share your pics. Powered by Firebase.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Friendly Pix</title>
+  <title>FaceTweet</title>
   <link rel="shortcut icon" href="/images/favicon.png">
 
   <!-- Disable tap highlight on IE -->
@@ -28,7 +28,7 @@
 
   <!-- Add to home screen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Friendly Pix">
+  <meta name="application-name" content="FaceTweet">
   <meta name="theme-color" content="#303F9F">
   <link rel="icon" sizes="192x192" href="/images/icon-192x192.png">
   <link rel="icon" sizes="128x128" href="/images/icon-128x128.png">
@@ -36,7 +36,7 @@
   <!-- Add to home screen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Friendly Pix">
+  <meta name="apple-mobile-web-app-title" content="FaceTweet">
   <link rel="apple-touch-icon" href="/images/icon-180x180.png">
   <link rel="apple-touch-icon-precomposed" href="/images/icon-180x180.png">
   <meta name="apple-mobile-web-app-status-bar-style" content="#303F9F">
@@ -66,13 +66,12 @@
 
 <!-- Splash screen -->
 <section id="page-splash">
-  <h3 class="fp-logo"><img src="/images/icon-120x120.png"> Friendly Pix</h3>
-  <div class="fp-caption">The friendliest way to share your pics</div>
+  <h3 class="fp-logo"><img src="/images/icon-120x120.png"> FaceTweet</h3>
+  <div class="fp-caption">Login and see what everyone’s doing!</div>
   <div class="fp-signed-out-only fp-initially-hidden">
     <div id="firebaseui-auth-container" class="fp-signed-out-only fp-initially-hidden"></div>
     <a class="fp-skip" href="/feed">skip sign in</a>
   </div>
-  <div class="fp-note">Disclaimer: This is a sample application aimed at showcasing the <a href="https://firebase.developers.google.com/docs">Firebase</a> platform capabilities. Avoid posting personal or private data.</div>
 </section>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -82,7 +81,7 @@
     <div class="mdl-layout__header-row fp-titlebar">
 
       <!-- Logo -->
-      <h3 class="fp-logo"><a href="/feed"><img src="/images/icon-120x120.png"> Friendly Pix</a></h3>
+      <h3 class="fp-logo"><a href="/feed"><img src="/images/icon-120x120.png"> FaceTweet</a></h3>
       <div class="mdl-layout-spacer"></div>
 
       <!-- Search bar -->
@@ -345,13 +344,12 @@
     'signInFlow': signInFlow,
     'signInOptions': [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID
     ]
   };
   var firebaseUi = new firebaseui.auth.AuthUI(firebase.auth());
 </script>
 
-<!-- Friendly Pix ES5 scripts -->
+<!-- FaceTweet ES5 scripts -->
 <script src="/scripts-es5/utils.js"></script>
 <script src="/scripts-es5/firebase.js"></script>
 <script src="/scripts-es5/auth.js"></script>
@@ -363,7 +361,7 @@
 <script src="/scripts-es5/feed.js"></script>
 <script src="/scripts-es5/routing.js"></script>
 
-<!-- Friendly Pix ES2015 scripts -->
+<!-- FaceTweet ES2015 scripts -->
 <!-- Uncomment and replace scripts above to serve ES2015 scripts directly. Mainly for testing. -->
 <!-- <script src="/scripts/utils.js"></script>
 <script src="/scripts/firebase.js"></script>
