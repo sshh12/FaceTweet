@@ -1,6 +1,6 @@
 {
-  "name": "Friendly Pix",
-  "short_name": "FriendlyPix",
+  "name": "FaceTweet",
+  "short_name": "FaceTweet",
   "icons": [{
     "src": "/images/icon-128x128.png",
     "sizes": "128x128",
