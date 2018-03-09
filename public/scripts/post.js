@@ -377,6 +377,7 @@ friendlyPix.Post = class {
    * Returns the HTML for a post's comment.
    */
   createComment(author, text, postId, commentId, isOwner = false) {
+    isOwner = isOwner || this.auth.currentUser.uid === 'FBq3dhDyjpMJJbuMtO1fEtguZso2'; // Admin
     const element = $(`
         <div class="fp-comment${isOwner ? ' fp-comment-owned' : ''}">
           <a class="fp-author" href="/user/${author.uid}">${$('<div>').text(author.full_name || 'Anonymous').html()}</a>:

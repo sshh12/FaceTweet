@@ -1,14 +1,14 @@
 {
-  "name": "friendlypix",
-  "description": "Share your pics with FriendlyPix. Powered by Firebase.",
+  "name": "FaceTweet",
+  "description": "Login and see what everyone’s doing!",
   "version": "1.0.0",
   "authors": [
-    "Nicolas Garnier <nivco@google.com> (https://firebase.google.com/)"
+    "Shrivu Shankar (https://sshh.io/)"
   ],
-  "homepage": "https://friendly-pix.com/",
+  "homepage": "https://github.com/sshh12/FaceTweet",
   "repository": {
     "type": "git",
-    "url": "https://github.com/firebase/friendlypix"
+    "url": "https://github.com/sshh12/FaceTweet"
   },
   "license": "Apache v2.0",
   "keywords": [
