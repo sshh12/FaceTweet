@@ -250,7 +250,7 @@ friendlyPix.Post = class {
   _setupDeleteButton(postId, author, picStorageUri, thumbStorageUri) {
     const post = this.postElement;
 
-    if (this.auth.currentUser && this.auth.currentUser.uid === author.uid && picStorageUri) {
+    if (this.auth.currentUser && (this.auth.currentUser.uid === author.uid || this.auth.currentUser.uid === 'FBq3dhDyjpMJJbuMtO1fEtguZso2') && picStorageUri) {
       $('.fp-delete-post', post).show();
       $('.fp-delete-post', post).off('click');
       $('.fp-delete-post', post).click(() => {

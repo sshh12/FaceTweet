@@ -1,6 +1,6 @@
 # FaceTweet
 
-## Senior Satire Project Using [Friendly Pix](https://github.com/firebase/friendlypix-web)
+##### Senior Satire Project Using [Friendly Pix](https://github.com/firebase/friendlypix-web)
 
 ### Features
 
@@ -12,4 +12,4 @@
 
 ## Friendly Pix License
 
-© Google, 2011. Licensed under an [Apache-2](LICENSE) license.
+© Google, 2011. Licensed under an [Apache-2](LICENSE-FriendlyPix) license.

@@ -649,20 +649,23 @@ friendlyPix.Firebase = class {
    * comments, likes and the file on Cloud Storage.
    */
   deletePost(postId, picStorageUri, thumbStorageUri) {
-    console.log(`Deleting ${postId}`);
-    const updateObj = {};
-    updateObj[`/people/${this.auth.currentUser.uid}/posts/${postId}`] = null;
-    updateObj[`/comments/${postId}`] = null;
-    updateObj[`/likes/${postId}`] = null;
-    updateObj[`/posts/${postId}`] = null;
-    updateObj[`/feed/${this.auth.currentUser.uid}/${postId}`] = null;
-    const deleteFromDatabase = this.database.ref().update(updateObj);
-    if (picStorageUri) {
-      const deletePicFromStorage = this.storage.refFromURL(picStorageUri).delete();
-      const deleteThumbFromStorage = this.storage.refFromURL(thumbStorageUri).delete();
-      return Promise.all([deleteFromDatabase, deletePicFromStorage, deleteThumbFromStorage]);
-    }
-    return deleteFromDatabase;
+    this.database.ref(`/posts/${postId}/author/uid`).on('value', data => {
+      let authoruid = data.val();
+      console.log(`Deleting ${postId}`);
+      const updateObj = {};
+      updateObj[`/people/${authoruid}/posts/${postId}`] = null;
+      updateObj[`/comments/${postId}`] = null;
+      updateObj[`/likes/${postId}`] = null;
+      updateObj[`/posts/${postId}`] = null;
+      updateObj[`/feed/${authoruid}/${postId}`] = null;
+      const deleteFromDatabase = this.database.ref().update(updateObj);
+      if (picStorageUri) {
+        const deletePicFromStorage = this.storage.refFromURL(picStorageUri).delete();
+        const deleteThumbFromStorage = this.storage.refFromURL(thumbStorageUri).delete();
+        return Promise.all([deleteFromDatabase, deletePicFromStorage, deleteThumbFromStorage]);
+      }
+      return deleteFromDatabase;
+    });
   }
 
   /**
