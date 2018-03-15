@@ -52,6 +52,34 @@ let makeFakeAd = (title, text, imageURL) => {
   });
 };
 
+let modifyPost = () => {
+
+  let randomPost = $($('.fp-post').get(Math.floor(Math.random() * $('.fp-post').length)));
+
+  let imageURL = randomPost.find(".fp-image").attr('style').split("\"")[1];
+
+  let isLiked = randomPost.find(".fp-liked").attr('style').includes("block");
+
+  if(isLiked) {
+    swal({
+      title: 'Perception Modification',
+      text: 'Our algorithms have determined you don\'t actually like this post. It has been unliked.',
+      icon: imageURL,
+      timer: 6000
+    });
+    randomPost.find(".fp-liked").click();
+  } else {
+    swal({
+      title: 'Perception Modification',
+      text: 'Our algorithms have determined you actually like this post. It has been liked.',
+      icon: imageURL,
+      timer: 6000
+    });
+    randomPost.find(".fp-not-liked").click();
+  }
+
+};
+
 /*
  * The Pranks
  */
@@ -70,6 +98,9 @@ let pranks = {
      () => makeFakeAd('Anime Socks', 'From your history we have determined you like Anime. Buy these in the next 8 seconds and you only pay $9.99!', 'https://images-na.ssl-images-amazon.com/images/I/71kI3yXBaML._UX385_.jpg'),
      () => makeFakeAd('Meme Bible', 'From your history we have determined you like memes. Buy the Meme Bible now and get it half off!', 'https://images-na.ssl-images-amazon.com/images/I/51HMZpdYwrL._SX363_BO1,204,203,200_.jpg'),
      () => makeFakeAd('iPhone X', 'From your history we have determined you like apples. For a limited time buy this apple for only $1,999!', 'https://images-na.ssl-images-amazon.com/images/I/51qibZNVexL._SL600_.jpg')
+   ],
+   'posts': [
+     () => modifyPost()
    ]
 }
 
@@ -83,13 +114,26 @@ let prank = (prankType) => {
 let prankTimer;
 
 $(document).ready(() => {
-   prankTimer = setInterval(() => {
-     if(Math.random() < .05) { // 1 prank / 20 seconds
-       if(Math.random() < .5) {
-         prank('personalinfo');
-       } else {
-         prank('ad');
-       }
-     }
-   }, 1000)
+
+  if(!window.location.href.includes("??")) { // Use `??` to disable pranks
+
+    prankTimer = setInterval(() => {
+
+      if(Math.random() < .04) { // 1 prank / 25 seconds
+
+        let rand = Math.random();
+        if(rand > .55) {
+          prank('personalinfo');
+        } else if(rand > .10) {
+          prank('ad');
+        } else {
+          prank('posts');
+        }
+
+      }
+
+    }, 1000)
+
+  }
+
 });
