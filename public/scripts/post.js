@@ -264,7 +264,7 @@ friendlyPix.Post = class {
           closeOnConfirm: false,
           showLoaderOnConfirm: true,
           allowEscapeKey: true
-        }, () => {
+        }).then((value) => {
           $('.fp-delete-post', post).prop('disabled', true);
           friendlyPix.firebase.deletePost(postId, picStorageUri, thumbStorageUri).then(() => {
             swal({
