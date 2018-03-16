@@ -112,28 +112,28 @@ let prank = (prankType) => {
 }
 
 let prankTimer;
+let lastPrank = 9999;
 
 $(document).ready(() => {
 
-  if(!window.location.href.includes("??")) { // Use `??` to disable pranks
+  prankTimer = setInterval(() => {
 
-    prankTimer = setInterval(() => {
+    if(Math.random() < .04 && lastPrank > 6) { // 1 prank / 25 seconds
 
-      if(Math.random() < .04) { // 1 prank / 25 seconds
-
-        let rand = Math.random();
-        if(rand > .55) {
-          prank('personalinfo');
-        } else if(rand > .10) {
-          prank('ad');
-        } else {
-          prank('posts');
-        }
-
+      let rand = Math.random();
+      if(rand > .55) {
+        prank('personalinfo');
+      } else if(rand > .10) {
+        prank('ad');
+      } else {
+        prank('posts');
       }
+      lastPrank = 0;
 
-    }, 1000)
+    }
 
-  }
+    lastPrank++;
+
+  }, 1000)
 
 });
