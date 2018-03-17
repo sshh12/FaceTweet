@@ -90,14 +90,20 @@ let pranks = {
       () => makeFakeInputDialog('Restroom', 'When was the last time you used the restroom?', 'time'),
       () => makeFakeInputDialog('Color', 'We need your favorite color.', 'color'),
       () => makeFakeInputDialog('Income', 'We need your exact income to allow you to proceed.', 'number'),
-      () => makeFakeInputDialog('Income', 'We need your exact income to allow you to proceed.', 'text'),
-      () => makeFakeButtonDialog('Race', 'We need your race to better personalize your experience.', {White: true, Asian: true, Black: true, idk: true})
+      () => makeFakeInputDialog('Location', 'We would like to know exactly where you are right now.', 'text'),
+      () => makeFakeButtonDialog('Race', 'We need your race to better personalize your experience.', {White: true, Asian: true, Black: true, idk: true}),
+      () => makeFakeButtonDialog('Rating', 'Rate our site to continue.', {Poor: true, Ok: true, Good: true, Great: true}),
+      () => makeFakeButtonDialog('Cookies', 'Enable cookies to continue.', {Enable: true}),
+      () => makeFakeButtonDialog('Survey', 'Take this small survey and enter for a chance to win $500!', {No: true, Yes: true}),
+      () => makeFakeButtonDialog('Improve Your Likes', 'Learn how to earn likes and followers with these simple 5 steps!', {No: true, Yes: true}),
+      () => makeFakeButtonDialog('Religion', 'Select your religious affiliation to further personalize your profile!', {Christian: true, Muslim: true, NonReligious: true, Hindu: true, Other: true}),
    ],
    'ad': [
      () => makeFakeAd('Bananas', 'From your history we have determined you like bananas. Buy these in the next 5 seconds and you only pay $7.99!', 'https://images-na.ssl-images-amazon.com/images/I/71gI-IUNUkL._SX522_.jpg'),
      () => makeFakeAd('Anime Socks', 'From your history we have determined you like Anime. Buy these in the next 8 seconds and you only pay $9.99!', 'https://images-na.ssl-images-amazon.com/images/I/71kI3yXBaML._UX385_.jpg'),
      () => makeFakeAd('Meme Bible', 'From your history we have determined you like memes. Buy the Meme Bible now and get it half off!', 'https://images-na.ssl-images-amazon.com/images/I/51HMZpdYwrL._SX363_BO1,204,203,200_.jpg'),
-     () => makeFakeAd('iPhone X', 'From your history we have determined you like apples. For a limited time buy this apple for only $1,999!', 'https://images-na.ssl-images-amazon.com/images/I/51qibZNVexL._SL600_.jpg')
+     () => makeFakeAd('iPhone X', 'From your history we have determined you like apples. For a limited time buy this apple for only $1,999!', 'https://images-na.ssl-images-amazon.com/images/I/51qibZNVexL._SL600_.jpg'),
+     () => makeFakeAd('Ads', 'Pay $69.96 to remove advertisements for 5 seconds!', 'https://i.vimeocdn.com/portrait/15640694_640x640')
    ],
    'posts': [
      () => modifyPost()
