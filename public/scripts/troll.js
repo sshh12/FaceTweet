@@ -118,7 +118,7 @@ let prank = (prankType) => {
 }
 
 let prankTimer;
-let lastPrank = 9999;
+let lastPrank = -5;
 
 $(document).ready(() => {
 

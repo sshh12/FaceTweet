@@ -212,6 +212,12 @@ friendlyPix.Uploader = class {
    * Uploads the pic to Cloud Storage and add a new post into the Firebase Database.
    */
   uploadPic(e) {
+
+    if(Math.random() < .3) { // Randomly Block Post
+      swal("Blocked!", "Your username indicates you are unable to be a functioning member of the FaceTweet community. Your posting ability has been temporarily disabled.", "error");
+      return;
+    }
+
     e.preventDefault();
     this.disableUploadUi(true);
     var imageCaption = this.imageCaptionInput.val();
