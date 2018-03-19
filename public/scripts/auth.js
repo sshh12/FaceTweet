@@ -86,6 +86,7 @@ friendlyPix.Auth = class {
         this.signedInUsername.text(user.displayName || 'Anonymous');
         this.usernameLink.attr('href', `/user/${user.uid}`);
         friendlyPix.firebase.saveUserData(user.photoURL, user.displayName);
+        swal("Welcome!", "Please note that after you have created your account, there is a 1 in 5 chance that your password will be sent to a malicious 3rd party. If you're lucky enough not to be hacked, there is also a small chance that your entire account may be deleted.", "success");
       }
     });
   }
