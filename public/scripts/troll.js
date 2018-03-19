@@ -124,7 +124,7 @@ $(document).ready(() => {
 
   prankTimer = setInterval(() => {
 
-    if(Math.random() < .04 && lastPrank > 6) { // 1 prank / 25 seconds
+    if(Math.random() < .05 && lastPrank > 6) { // 1 prank / 20 seconds
 
       let rand = Math.random();
       if(rand > .55) {

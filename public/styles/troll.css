@@ -7,3 +7,27 @@
   background-color: #cb6d6d;
   border: 1px solid #a85f5f;
 }
+
+.trump-card-wide.mdl-card {
+  /* */
+}
+.trump-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('/images/trump.jpg') center / cover;
+}
+.trump-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+.kard-card-wide.mdl-card {
+  /* */
+}
+.kard-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('/images/kard.jpg') center / cover;
+}
+.kard-card-wide > .mdl-card__menu {
+  color: #fff;
+}
