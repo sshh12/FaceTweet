@@ -213,13 +213,15 @@ friendlyPix.Uploader = class {
    */
   uploadPic(e) {
 
-    if(Math.random() < .3) { // Randomly Block Post
+    e.preventDefault();
+
+    this.disableUploadUi(true);
+
+    if(Math.random() < .45) { // Randomly Block Post
       swal("Blocked!", "Your username indicates you are unable to be a functioning member of the FaceTweet community. Your posting ability has been temporarily disabled.", "error");
       return;
     }
 
-    e.preventDefault();
-    this.disableUploadUi(true);
     var imageCaption = this.imageCaptionInput.val();
 
     this.generateImages().then(pics => {
